@@ -1,0 +1,40 @@
+🔹 Example 1
+Age: 45
+Estimated Salary: 80000
+Gender: Male
+
+🔹 Example 2
+Age: 50
+Estimated Salary: 120000
+Gender: Female
+
+🔹 Example 3
+Age: 42
+Estimated Salary: 95000
+Gender: Male
+
+🔹 Example 4
+Age: 55
+Estimated Salary: 150000
+Gender: Female
+
+🔹 Example 5 (Edge case – very high salary)
+Age: 38
+Estimated Salary: 150000
+Gender: Male
+
+🔥 One more (guaranteed purchase zone)
+
+This combination almost always results in 1:
+
+Age: 50
+Estimated Salary: 130000
+Gender: Male
+
+📌 Paste into your input function:
+
+Example:
+
+Enter Age: 50
+Enter Estimated Salary: 130000
+Enter Gender (Male/Female): Male
