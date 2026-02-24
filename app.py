@@ -5,7 +5,6 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 
-# ---------------- Dataset ----------------
 df = pd.read_csv("Social_Network_Ads.csv")
 df['Gender'] = df['Gender'].map({'Male': 1, 'Female': 0})
 
@@ -21,7 +20,6 @@ X_test = sc.transform(X_test)
 classifier = LogisticRegression(random_state=0, max_iter=300)
 classifier.fit(X_train, y_train)
 
-# ---------------- Flask App ----------------
 app = Flask(__name__)
 
 @app.route("/")
@@ -36,12 +34,11 @@ def predict():
         gender_input = request.form.get("gender")
         gender = 1 if gender_input.lower() == "male" else 0
 
-        # Prepare data for prediction
         data = np.array([[age, salary, gender]])
         scaled = sc.transform(data)
 
         prob = classifier.predict_proba(scaled)[0][1]
-        prediction = "WILL Purchase ✔" if prob >= 0.45 else "Will NOT Purchase ❌"
+        prediction = "WILL Purchase " if prob >= 0.45 else "Will NOT Purchase "
 
         return jsonify({
             "prediction": prediction,
